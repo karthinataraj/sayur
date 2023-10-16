@@ -1,0 +1,25 @@
+/1.first we difined a function named as 'count_the'  and give argument 'passage'
+2.Inside the function  we first convert the entire passage to lowercase using the lower() and use split() method to split the words
+3.We initialize a variable count as a 0 
+4.using a for loop , we check if the current word is 'the' and the next word is also 'the' and check its in without 'a' in between
+5.if both condition are satisfied then increment the 'count' to next word
+6.after finished return final 'the' count
+
+
+
+
+ef count_the(passage):
+    words = passage.lower().split()  
+    count = 0
+
+    for i in range(len(words) - 1):
+        if words[i] == 'the' and words[i + 1] == 'the':
+            if i == 0 or words[i - 1] != 'a':
+                count += 1
+
+    return count
+passage ="The cat sat on the mat. The mat was soft and warm. The cat jumped off the mat."
+
+result = count_double_the_in_passage(passage)
+print("The number of times 'the the' without 'a' in between: ", result)
+
